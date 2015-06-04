@@ -1,2 +1,8 @@
+<%= link_to "Add new post!", new_post_path %>
+
 <!-- change title later -->
-<h3>index page</h3>
+<h3>post page</h3>
+
+<% @post.each do |post| %>
+	<h4> <%= link_to post.title, post%> </h4>
+<% end %>
