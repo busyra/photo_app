@@ -15,6 +15,7 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		# flash message when successful 
+		@post.user = current_user
 		if @post.save
 			redirect_to @post, notice: "Successfully created new post!"
 		else
