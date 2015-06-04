@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
 	
 	def index
+		@post = Post.all.order("created_at DESC")
 	end
 
 	def show
+		@post = Post.find(params[:id])
 	end
 
 	def new
@@ -12,6 +14,12 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+
+		if @post.save
+			redirect_to @post, notice: "Successfully created new post!"
+		else
+			render 'new'
+		end
 	end
 
 	def edit
@@ -20,7 +28,7 @@ class PostsController < ApplicationController
 	def update
 	end
 
-	def pin_params
+	def post_params
 		params.require(:post).permit(:title, :description)
 	end
 
