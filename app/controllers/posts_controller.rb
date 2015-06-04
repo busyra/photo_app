@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+		#before_action find_post will help display
 	end
 
 	def new
@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-
+		# flash message when successful 
 		if @post.save
 			redirect_to @post, notice: "Successfully created new post!"
 		else
@@ -26,6 +26,7 @@ class PostsController < ApplicationController
 	end
 
 	def update
+		#flash message when sucessful
 		if @post.update(post_params)
 			redirect_to @post, notice: "Successfully updated!"
 		else 
@@ -33,6 +34,12 @@ class PostsController < ApplicationController
 		end
 	end
 
+
+	def destroy
+		@post.destroy
+		redirect_to root_path
+	end
+	
 	private
 
 	def post_params
