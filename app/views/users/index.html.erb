@@ -1,14 +1,14 @@
-<% if current_user  %>
+<!--  <% if current_user  %>
 	You are logged in as <%= current_user.name %>
 	<%= link_to 'LOG OUT!', logout_path, method: :delete %>
 <% else %>
 	<%= link_to 'SIGN UP', users_new_path %>
 	<%= link_to 'LOG IN', login_path %>
-<% end %>
+<% end %>-->
 <h4> Users </h4>
 <ul>
 <!-- displays all users -->
 	<% @users.each do |user| %>
-		<li><%= user.name %></li>
+		<li><%= user.name %> <%= link_to "More info", user_path(user) %></li>
 	<% end %>
 </ul>

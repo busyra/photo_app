@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :authorized?, except: :index
+
 	def index
 		@post = Post.all.order("created_at DESC")
 	end
@@ -14,6 +16,8 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
+		@post.user = current_user
+
 		# flash message when successful 
 		if @post.save
 			redirect_to @post, notice: "Successfully created new post!"
