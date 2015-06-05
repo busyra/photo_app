@@ -27,6 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt' 
 gem 'bootstrap-sass'
 gem 'simple_form'
+gem 'paperclip'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

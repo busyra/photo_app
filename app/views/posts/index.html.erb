@@ -1,7 +1,9 @@
+<div class="col-md-8 col-md-offset-1">
 
 <!-- change title later -->
-<h3>post page</h3>
+<h3>Photo</h3>
 
 <% @post.each do |post| %>
-	<h4> <%= link_to post.title, post%> </h4>
+	<%= image_tag post.image.url(:med) %><br>
+	<h4> <%= link_to post.title, post%> </h4><hr>
 <% end %>
