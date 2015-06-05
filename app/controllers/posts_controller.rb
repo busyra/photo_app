@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 	end
 
 	def show
+
+		@img = EXIFR::JPEG.new(@post.image.path)
 		#before_action find_post will help display
 	end
 

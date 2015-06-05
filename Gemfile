@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -27,8 +27,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt' 
 gem 'bootstrap-sass'
 gem 'simple_form'
-gem 'paperclip'
-gem 'masonry-rails'
+gem 'paperclip', '~> 4.2.0'
+gem 'masonry-rails', '~> 0.2.1'
+
+gem 'exifr'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

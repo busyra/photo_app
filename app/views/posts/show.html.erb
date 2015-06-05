@@ -7,6 +7,17 @@
 	<p>Submitted by: </p>
 	<h5> <%= @post.user.email%></h5>
 
+	
+
+	<p>Dimensions: <%= @img.width %> x <%= @img.height %></p>
+	<p>Exposure: <%= @img.exposure_time.to_s %></p>
+	<p>F Stop: <%= @img.f_number.to_f %></p>
+	<p>Model: <%= @img.model %></p>
+	<p>ISO: <%= @img.iso_speed_ratings %></p>
+	<p>Focal Length: <%= @img.focal_length_in_35mm_film %> mm<p>
+	<p><%= @img.to_hash %></p>
+
+
 	<!--  link to edit post -->
 	<%= link_to "Edit", edit_post_path %>
 	<!-- link to destroy post and confirmation message-->
