@@ -2,7 +2,7 @@
 
 <!-- change title later -->
 <h3>Photo</h3>
-
+ <div id="posts" class="transition-enabled">
 <% @post.each do |post| %>
 	<%= image_tag post.image.url(:med) %><br>
 	<h4> <%= link_to post.title, post%> </h4><hr>

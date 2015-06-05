@@ -28,6 +28,7 @@ gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'paperclip'
+gem 'masonry-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
