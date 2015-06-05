@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 		@post.user = current_user
 
 		# flash message when successful 
+		@post.user = current_user
 		if @post.save
 			redirect_to @post, notice: "Successfully created new post!"
 		else
