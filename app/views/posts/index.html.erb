@@ -1,9 +1,15 @@
-<div class="col-md-8 col-md-offset-1">
-
+<!-- <div class="col-md-12 col-md-offset-1">
+ -->
 <!-- change title later -->
-<h3>Photo</h3>
- <div id="posts" class="transition-enabled">
-<% @post.each do |post| %>
-	<%= image_tag post.image.url(:med) %><br>
-	<h4> <%= link_to post.title, post%> </h4><hr>
+<h3>Photo Board</h3>
+<div id="posts" class="transition-enabled">
+ 
+	<% @post.each do |post| %>
+		<div class="box panel panel-default">
+			<%= image_tag post.image.url(:med) %>
+			<h4> <%= link_to post.title, post%> </h4>
+			<p>Submitted by: <%= post.user.email%></p>
+		</div>
 <% end %>
+</div>
+
