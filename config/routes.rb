@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  # routes for posts
   get "posts/" => "posts#index"
   get "posts/new" => "posts#new", as: :new_post
   get "posts/:id" => "posts#show", as: :post
@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   get "posts/:id/edit" => "posts#edit", as: :edit_post
   patch "posts/:id" => "posts#update"
   delete "posts/:id" => "posts#destroy"
-
+  # routes for user
   get "users" => "users#index"
   get "users/new" => "users#new" 
   get "user/:id" => "users#show", as: :user
   delete "user/:id" => "users#destroy" 
   post "users" => "users#create"
   
-
+  #routes for log in/session
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
